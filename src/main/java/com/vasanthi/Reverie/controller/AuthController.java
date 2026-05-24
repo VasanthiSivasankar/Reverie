@@ -1,4 +1,5 @@
 package com.vasanthi.Reverie.controller;
+import com.vasanthi.Reverie.dto.LoginRequest;
 import com.vasanthi.Reverie.model.user;
 import com.vasanthi.Reverie.dto.RegisterRequest;
 import com.vasanthi.Reverie.service.UserService;
@@ -12,5 +13,9 @@ public class AuthController {
     @PostMapping("/register")
     public user register(@RequestBody RegisterRequest request){
         return userService.registerUser(request);
+    }
+    @PostMapping("/login")
+    public String login(@RequestBody LoginRequest request){
+        return userService.loginUser(request);
     }
 }
